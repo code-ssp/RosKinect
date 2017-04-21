@@ -1,0 +1,19 @@
+Zu den URDF-Files:
+
+TX60L.urdf: - Die maximalen Verfahrwinkel sind um jeweils 1 Grad im Gradmaß verkleinert (Das sollte nach Blank A. so gemacht werden)
+	    - Außerdem sind die Startorientierungen der Winkel so gewählt, dass die Gelenke die selbe Ausrichtung     besitzen wie im Stäubli Studio
+
+TX60L_v2.urdf: - enthällt die urdf-Datei mit maximalen Verfahrwinkel des TX60L (Die Datei dient als Backup und sollte unverändert bleiben)
+
+
+Ggf. müssen die Dateipfade der Mesh-Dateien in den urdf-Files angepasst werden.
+
+_______________________________________________________________________________
+
+Zu dem Launch-File:
+
+Beim Starten des GUIs zum testen der Joint-States muss ein Robot-Modell geladen werden.
+
+roslaunch tx60l_urdf display_gui.launch model:=catkin_ws/src/tx60l_master/tx60l_urdf/TX60L_v2.urdf
+
+Hinweis: Der Pfad bei model:= <Pfad_zur_Datei> muss ggf. angepasst werden.

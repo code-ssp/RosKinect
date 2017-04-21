@@ -1,0 +1,201 @@
+<?xml version="1.0"?>
+<robot name="TX60L">
+
+<link name="base_link" >
+	<visual>
+		<geometry>
+			<mesh filename="package://tx60l_urdf/meshes/bt.stl"/>
+		</geometry>
+		<origin xyz="0 0 0" rpy="0 0 0" />
+		<material name="black">
+		<color rgba="0 0 0 1"/>
+		</material>
+	</visual>
+	<collision>
+		<geometry>
+			<mesh filename="package://tx60l_urdf/meshes/bt_col.stl"/>
+		</geometry>
+		<origin xyz="0 0 0" rpy="0 0 0" />
+	</collision>
+</link>
+
+<joint name="joint_1" type="revolute">
+	<parent link="base_link"/>
+	<child link="at1"/>
+	<origin xyz="0 0 0.375" rpy="0 0 3.1416" />
+	<axis xyz="0 0 1" />
+	<limit lower="-3.1241" upper="3.1241" effort="100" velocity="435" />
+</joint>
+
+<link name="at1" >
+	<visual>
+		<geometry>
+			<mesh filename="package://tx60l_urdf/meshes/at1.stl"/>
+		</geometry>
+		<origin xyz="0 0 0" rpy="4.7124 0 3.1416" />
+		<material name="white">
+		<color rgba="1 1 1 1"/>
+		</material>
+	</visual>
+	<collision>
+		<geometry>
+			<mesh filename="package://tx60l_urdf/meshes/at1_col.stl"/>
+		</geometry>
+		<origin xyz="0 0 0" rpy="4.7124 0 3.1416" />
+	</collision>
+</link>
+
+<joint name="joint_2" type="revolute">
+	<parent link="at1"/>
+	<child link="at2"/>
+	<origin xyz="0 0 0" rpy="0 0 0" />
+	<axis xyz="0 -1 0" />
+	<limit lower="-2.2078" upper="2.2078" effort="100" velocity="385" />
+</joint>
+
+<link name="at2" >
+	<visual>
+	<geometry>
+		<mesh filename="package://tx60l_urdf/meshes/at2.stl"/>
+	</geometry>
+	<origin xyz="0 0 0" rpy="1.5708 3.1416 0" />
+	<material name="orange">
+		<color rgba="1 0.6 0 1"/>
+	</material>
+	</visual>
+
+<collision>
+	<geometry>
+		<mesh filename="package://tx60l_urdf/meshes/at2_col.stl"/>
+	</geometry>
+	<origin xyz="0 0 0" rpy="1.5708 3.1416 0" />
+</collision>
+</link>
+
+<joint name="joint_3" type="revolute">
+	<parent link="at2"/>
+	<child link="at3"/>
+	<origin xyz="0 0.02 0.400" rpy="0 0 0" />
+	<axis xyz="0 -1 0" />
+	<limit lower="-2.6442" upper="2.6442" effort="100" velocity="500" />
+</joint>
+
+<link name="at3" >
+	<visual>
+	<geometry>
+		<mesh filename="package://tx60l_urdf/meshes/at3.stl"/>
+	</geometry>
+	<origin xyz="0 -0.04 0" rpy="4.7124 0 3.1416"/>
+	<material name="white">
+		<color rgba="1 1 1 1"/>
+	</material>
+	</visual>
+	<collision>
+		<geometry>
+			<mesh filename="package://tx60l_urdf/meshes/at3_col.stl"/>
+		</geometry>
+		<origin xyz="0 -0.04 0" rpy="4.7124 0 3.1416" />
+	</collision>
+</link>
+
+<joint name="joint_4" type="revolute">
+	<parent link="at3"/>
+	<child link="at4"/>
+	<origin xyz="0 -0.04 0" rpy="0 0 3.1416" />
+	<axis xyz="0 0 1" />
+	<limit lower="-4.6949" upper="4.6949" effort="100" velocity="995" />
+</joint>
+
+<link name="at4" >
+	<visual>
+		<geometry>
+			<mesh filename="package://tx60l_urdf/meshes/at4.stl"/>
+		</geometry>
+		<origin xyz="0 0 0" rpy="0 0 0"/>
+		<material name="orange">
+			<color rgba="1 0.6 0 1"/>
+		</material>
+	</visual>
+	<collision>
+		<geometry>
+			<mesh filename="package://tx60l_urdf/meshes/at4_col.stl"/>
+		</geometry>
+		<origin xyz="0 0 0" rpy="0 0 0" />
+	</collision>
+</link>
+
+<joint name="joint_5" type="revolute">
+	<parent link="at4"/>
+	<child link="at5"/>
+	<origin xyz="0 0 0.450" rpy="0 0 0" />
+	<axis xyz="0 1 0" />
+	<limit lower="-2.2078" upper="2.2951" effort="100" velocity="1065" />
+</joint>
+
+<link name="at5" >
+	<visual>
+		<geometry>
+			<mesh filename="package://tx60l_urdf/meshes/at5.stl"/>
+		</geometry>
+		<origin xyz="0 0 0" rpy="-1.57079635 0 0"/>
+		<material name="white">
+			<color rgba="1 1 1 1"/>
+		</material>
+	</visual>
+	<collision>
+		<geometry>
+			<mesh filename="package://tx60l_urdf/meshes/at5_col.stl"/>
+		</geometry>
+		<origin xyz="0 0 0" rpy="-1.57079635 0 0" />
+	</collision>
+</link>
+
+<joint name="joint_6" type="revolute">
+	<parent link="at5"/>
+	<child link="at6"/>
+	<origin xyz="0 0 0.07" rpy="0 0 0" />
+	<axis xyz="0 0 1" />
+	<limit lower="-4.6949" upper="4.6949" effort="100" velocity="435" />
+</joint>
+
+<link name="at6" >
+	<visual>
+		<geometry>
+			<mesh filename="package://tx60l_urdf/meshes/at6.stl"/>
+		</geometry>
+		<origin xyz="0 0 0" rpy="0 0 0"/>
+		<material name="orange">
+			<color rgba="1 0.6 0 1"/>
+		</material>
+	</visual>
+	<collision>
+		<geometry>
+			<mesh filename="package://tx60l_urdf/meshes/at6.stl"/>
+		</geometry>
+		<origin xyz="0 0 0" rpy="0 0 0" />
+	</collision>
+</link>
+
+<joint name="joint_7" type="fixed">
+	<parent link="at6"/>
+	<child link="dummy"/>
+	<origin xyz="0 0 0" rpy="0 0 0" />
+</joint>
+
+<link name="dummy" >
+	<visual>
+		<geometry>
+			<box size="0.01 0.01 0.01" />
+		</geometry>
+	<material name="invisible">
+		<color rgba="1 1 1 0"/>
+	</material>
+	</visual>
+	<collision>
+		<geometry>
+			<box size="0.01 0.01 0.01" />
+		</geometry>
+	</collision>
+</link>
+
+</robot>
